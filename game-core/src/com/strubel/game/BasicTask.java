@@ -55,13 +55,7 @@ public class BasicTask extends Task {
 		AGame.pos.x += (mov_x * AGame.speed_multi);
 		AGame.pos.y += (mov_y * AGame.speed_multi);
 		
-		float min_x = Math.min(AGame.pos.x, Gdx.graphics.getWidth()/2);
-		float max_x = Math.max(AGame.pos.x, Gdx.graphics.getWidth()/2);
-		
-		float min_y = Math.min(AGame.pos.y, Gdx.graphics.getHeight()/2);
-		float max_y = Math.max(AGame.pos.y, Gdx.graphics.getHeight()/2);
-		
-		distance = Math.sqrt(Math.pow(max_x - min_x, 2) + Math.pow(max_y - min_y, 2));
+		distance = Math.sqrt(Math.pow(AGame.pos.x - Gdx.graphics.getWidth()/2, 2) + Math.pow(AGame.pos.y - Gdx.graphics.getHeight()/2, 2));
 		
 		if (distance > AGame.circle_size + AGame.circle_size_2) {
 			AGame.isrunning = false;
